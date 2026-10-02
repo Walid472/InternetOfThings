@@ -27,4 +27,11 @@
         tools:layout_editor_absoluteX="159dp"
         tools:layout_editor_absoluteY="343dp" />
 
+    <UPsay.decouverteAndroid.MyView
+        android:id="@+id/myView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

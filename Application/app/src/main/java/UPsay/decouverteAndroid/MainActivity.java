@@ -13,8 +13,9 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void dessin(android.view.View view){
-        TextView editText = findViewById(R.id.monTexte);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) TextView editText = findViewById(R.id.monTexte);
         editText.setText("YES !!!");
+        setContentView(R.layout.gestionnaire2);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
