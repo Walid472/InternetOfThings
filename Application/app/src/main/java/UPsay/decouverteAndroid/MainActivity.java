@@ -1,6 +1,8 @@
 package UPsay.decouverteAndroid;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,7 +11,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-
+    @SuppressLint("SetTextI18n")
+    public void dessin(android.view.View view){
+        TextView editText = findViewById(R.id.monTexte);
+        editText.setText("YES !!!");
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
