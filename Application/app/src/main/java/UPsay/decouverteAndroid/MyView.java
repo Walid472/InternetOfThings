@@ -8,11 +8,15 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
+import android.os.Handler;
 
 public class MyView extends View {
-
+    float taille = 0;
+    Handler timerHandler = new Handler();
+    Runnable updateTimerThread = new Runnable() { public void run() { timerHandler.postDelayed(this, 100); invalidate(); } };
     public MyView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        timerHandler.postDelayed(updateTimerThread, 10);
     }
 
     @Override
@@ -28,9 +32,12 @@ public class MyView extends View {
         Bitmap b = BitmapFactory.decodeResource(getResources(), R.drawable.bunny_holding_carrot);
         canvas.drawBitmap(b, 200, 200, null);
 
-        // 3. Texte par-dessus tout
+        // 3. Texte par-dessus tout, qui grandit à chaque tick du timer
+        if (taille < 300) {
+            taille++;
+        }
         p.setColor(Color.GREEN);
-        p.setTextSize(100);
+        p.setTextSize(taille);
         p.setTextAlign(Paint.Align.CENTER);
         String texte = "Bonjour MONDE";
         canvas.drawText(texte, (float) getWidth() / 2, (float) getHeight() / 2, p);

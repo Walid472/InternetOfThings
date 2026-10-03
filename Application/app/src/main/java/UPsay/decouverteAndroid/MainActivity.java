@@ -3,6 +3,7 @@ package UPsay.decouverteAndroid;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         @SuppressLint({"MissingInflatedId", "LocalSuppress"}) TextView editText = findViewById(R.id.monTexte);
         editText.setText("YES !!!");
         setContentView(R.layout.gestionnaire2);
+        Toast.makeText(getApplicationContext(), "mon message", Toast.LENGTH_SHORT).show();
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
