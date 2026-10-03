@@ -32,7 +32,7 @@ public class MyView extends View {
         Bitmap b = BitmapFactory.decodeResource(getResources(), R.drawable.bunny_holding_carrot);
         canvas.drawBitmap(b, 200, 200, null);
 
-
+        // 3. Texte par-dessus tout, qui grandit à chaque tick du timer
         if (taille < 300) {
             taille++;
         }
